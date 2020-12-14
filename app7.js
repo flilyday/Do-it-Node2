@@ -19,11 +19,11 @@ app.use(function(req, res, next){
     console.log('첫번째 미들웨어 함수가 실행됨')
 
     var userAgent = req.header('User-Agent')
-    var paramName = req.query.name || req.body.name;
+    var paramID = req.query.id || req.body.id;
     // post방식으로 요청이 오면 query가 아닌 body에서 값을 꺼내야 한다.
     // 요청이 get으로 올지 post로 올지 확신할 수 없으면 이렇게 쓴다.
 
-    res.send('<h3>서버에서 응답. User-Agent -> </h3>' + userAgent + '</h3><h3>Param Name -> ' + paramName + '</h3>')
+    res.send('<h3>서버에서 응답. User-Agent -> </h3>' + userAgent + '</h3><h3>paramID -> ' + paramID + '</h3>')
 })
 
 var server = http.createServer(app).listen(app.get('port'), function(){
